@@ -1,0 +1,43 @@
+ALTER TABLE polzovateli
+ADD email VARCHAR(50) NOT NULL AFTER birth_day,
+ADD street VARCHAR(50) NOT NULL AFTER email,
+ADD addr INT(15) NOT NULL AFTER street,
+ADD phone INT(15) NOT NULL AFTER addr,
+ADD company VARCHAR(50) NOT NULL AFTER phone,
+ADD job VARCHAR(50) NOT NULL AFTER `company`,
+ADD city VARCHAR(50) NOT NULL DEFAULT 'Tomsk';
+
+ALTER TABLE polzovatel
+ADD CONSTRAINT UNIQUE (id, name, patronymic, surname, birth_day, email, addr, phone);
+
+INSERT INTO polzovateli (id, name, patronymic, surname, birth_day, email, street, addr, phone, company, job)
+VALUES ('1', 'Желваков', 'Ипатий', 'Яковлевич', '2001/06/19', 'ipatiy.jelvakov@rambler.ru ','i','1235321','7272060708',
+'Sholls Colonial Cafeteria', 'Personal appearance worker'),
+('2', 'Александров', 'Соломон', 'Ипполитович', '1997/12/23', 'solomon17091976@rambler.ru','s','63129','3144163637',
+'Grodins', 'Quality assurance inspector'),
+('3', 'Созонтова', 'Габриэлла', 'Петровна', '1964/06/11', 'gabriella.sozontova@ya.ru','Garfield Road','61602','3095956055',
+'Sun Foods', 'Web programmer'),
+('4', 'Шакмаков', 'Ермий', 'Кириллович', '1982/10/21', 'ermiy98@gmail.com','Bel Meadow Drive','91762','9093959045',
+'Fedco', 'Offset lithographic press operator'),
+('5', 'Пярин', 'Сосипатр', 'Никитьевич', '1991/04/21', 'sosipatr38@gmail.com','Cambridge Court','72855','4799633137',
+'Quickbiz', 'Career-technical teacher'),
+('6', 'Осминина', 'Мелания', 'Антоновна', '1999/10/22', 'melaniya19021980@rambler.ru','Liberty Avenue','92704','7144372054',
+'Two Pesos', 'Research dietitian'),
+('7', 'Осминина', 'Мелания', 'Меланивна', '1972/02/05', 'AnnCHatmaker@jourrapide.com','Walkers Ridge Way','60654','6302162822',
+'10,000 Auto Parts', 'Administrative support specialist'),
+('8', 'Староволков', 'Касьян', 'Ильич', '2000/11/11', 'kasyan27081966@ya.ru','Saint Marys Avenue','13611','3158462160',
+'Intelacard', 'Maxillofacial surgeon'),
+('9', 'Можаев', 'Октавиан', 'Арсеньевич', '1999/02/11', 'oktavian28041982@rambler.ru','Aaron Smith Drive','17055','7176917106',
+'Twin Electronics', 'Leasing consultant'),
+('10', 'Якшин', 'Аполинарий', 'Львович', '1971/08/01', 'apolinariy.yakshin@hotmail.com','College View','62928','6186724997',
+'Solution Answers', 'Radiologic technologist'),
+('11', 'Ананьева', 'Эмма', 'Никитьевна', '2001/11/03', 'emma4318@yandex.ru','Hampton Meadows','01720','9783771853',
+'Good Guys', 'High school counselor'),
+('12', 'Примакова', 'Аглая', 'Даниловна', '1977/03/02', 'aglaya1974@mail.ru','Alexander Drive','76201','9404420265',
+'Eagle Food Centers', 'Jewelry appraiser'),
+('13', 'Коптильников', 'Пантелеймон', 'Васильевич', '1988/04/21', 'panteleymon57@gmail.com','Valley Drive','19106','2673513108',
+'Architectural Genie', 'Registrar'),
+('14', 'Ефремовича', 'Грация', 'Александровна', '1996/02/11', 'graciya.efremovicha@outlook.com','Bryan Street','27407','3363140795',
+'One-Up Realty', 'ABE teacher'),
+('15', 'Мандрыка', 'Святослава', 'Игнатьевна', '1999/01/12', 'svyatoslava27071969@hotmail.com','Arrowood Drive','32207','9045470000',
+'Young @ Heart', 'Electronic publisher');
