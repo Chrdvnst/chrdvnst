@@ -1,0 +1,21 @@
+ALTER TABLE polzovateli MODIFY COLUMN gender INT(10);
+ALTER TABLE polzovateli 
+ADD CONSTRAINT gender 
+FOREIGN KEY gender REFERENCES gender(id);
+
+
+UPDATE polzovateli SET company = 1 WHERE id in (9,5,3);
+UPDATE polzovateli SET company = 2 WHERE id in (4,2);
+UPDATE polzovateli SET company = 3 WHERE id in (6,7);
+UPDATE polzovateli SET company = 4 WHERE id in (7,8);
+UPDATE polzovateli SET company = 5 WHERE id = 10;
+UPDATE polzovateli SET company = 6 WHERE id = 11;
+UPDATE polzovateli SET company = 7 WHERE id in (1,12);
+
+
+ALTER TABLE polzovateli MODIFY COLUMN company INT(10);
+
+ALTER TABLE polzovateli
+ADD CONSTRAINT company
+FOREIGN KEY (company)
+REFERENCES company(id);
