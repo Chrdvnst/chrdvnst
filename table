@@ -1,0 +1,178 @@
+CREATE TABLE `category` (
+  `id` int(10) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `parent` int(10) NOT NULL
+);
+
+CREATE TABLE `cities` (
+  `id` int(10) NOT NULL,
+  `name_rus` varchar(50) DEFAULT NULL,
+  `name_eng` varchar(50) DEFAULT NULL
+);
+
+
+
+INSERT INTO `cities` (`id`, `name_rus`, `name_eng`) VALUES
+(1, 'Томск', 'Tomsk'),
+(2, 'Новосибирс', 'Novosibirsk'),
+(3, 'Томск', 'Tomsk'),
+(4, 'Новосибирс', 'Novosibirsk');
+
+
+
+CREATE TABLE `company` (
+  `id` int(10) NOT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `INN` varchar(12) DEFAULT NULL,
+  `OGRN` varchar(13) DEFAULT NULL,
+  `director` varchar(150) DEFAULT NULL,
+  `addres` varchar(100) DEFAULT NULL
+);
+
+INSERT INTO `company` (`id`, `name`, `INN`, `OGRN`, `director`, `addres`) VALUES
+(1, 'sHARIKI', '664979987460', '8112480103112', 'Victor Baker', '2 Mitchell Loop Hillfurt SA6 6DH'),
+(2, 'Lutiki', '898443592342', '5047877509224', 'Antonio Allison', '736 Natalie Forges East Cameron BL7 8BW'),
+(3, 'demagogue', '6649790', '8112480112', 'Kevin Brown', 'Studio 37x Jennifer Centers East SL3 9LU'),
+(4, 'math', '664968', '8112480103112', 'James Swanson', '5 Michael Mountain New Leah SE18 7QX'),
+(5, 'Cosmopolitan', '664956', '8112480103112', 'Eric Young', '282 Florence Plaza Port Evieton GL1 2SZ'),
+(6, 'Eternity ', '664980', '8112480103112', 'Joseph Lopez', 'Studio 45 Greg Vista New Lola RH15 9TE'),
+(7, 'Galaxy ', '6541', '8112480103112', 'Victor Baker', '822 Reid Road Theoside PL1 4EH');
+
+
+
+CREATE TABLE `ganrs` (
+  `id` int(10) NOT NULL,
+  `name_rus` varchar(50) DEFAULT NULL,
+  `name_eng` varchar(50) DEFAULT NULL
+); 
+
+INSERT INTO `ganrs` (`id`, `name_rus`, `name_eng`) VALUES
+(1, 'мужской', 'male'),
+(2, 'женский', 'female');
+
+
+
+CREATE TABLE `projects` (
+  `id` int(10) NOT NULL,
+  `name` varchar(100) NOT NULL
+); 
+
+
+
+CREATE TABLE `tags` (
+  `id` int(10) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `color` varchar(100) NOT NULL
+); 
+
+
+
+CREATE TABLE `tasks` (
+  `id` int(10) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `start` date NOT NULL,
+  `end` date DEFAULT NULL
+); 
+
+
+
+CREATE TABLE `user` (
+  `id` int(10) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `surname` varchar(100) NOT NULL,
+  `patronymic` varchar(100) DEFAULT NULL,
+  `birthday` date NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `street` varchar(50) NOT NULL,
+  `adres` varchar(50) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `company` int(10) DEFAULT NULL,
+  `job` varchar(100) NOT NULL,
+  `city` tinyint(1) DEFAULT NULL,
+  `gender` int(10) NOT NULL DEFAULT 1,
+  `age` int(10) DEFAULT NULL
+); 
+
+
+
+INSERT INTO `user` (`id`, `name`, `surname`, `patronymic`, `birthday`, `email`, `street`, `adres`, `phone`, `company`, `job`, `city`, `gender`, `age`) VALUES
+(1, 'Желваков', 'Яковлевич', 'Ипатий', '2001-06-19', 'ipatiy.jelvakov@rambler.ru ', 'i', '1235321', '7272060708', 7, 'Personal appearance worker', 2, 1, 56),
+(2, 'Александров', 'Ипполитович', 'Соломон', '1997-12-23', 'solomon17091976@rambler.ru', 's', '63129', '3144163637', 2, 'Quality assurance inspector', 1, 2, 48),
+(3, 'Созонтова', 'Петровна', 'Габриэлла', '1964-06-11', 'gabriella.sozontova@ya.ru', 'Garfield Road', '61602', '3095956055', 1, 'Web programmer', 2, 2, 14),
+(4, 'Шакмаков', 'Кириллович', 'Ермий', '1982-10-21', 'ermiy98@gmail.com', 'Bel Meadow Drive', '91762', '9093959045', 2, 'Offset lithographic press operator', 1, 1, 57),
+(5, 'Пярин', 'Никитьевич', 'Сосипатр', '1991-04-21', 'sosipatr38@gmail.com', 'Cambridge Court', '72855', '4799633137', 1, 'Career-technical teacher', 2, 1, 32),
+(6, 'Осминина', 'Антоновна', 'Мелания', '1999-10-22', 'melaniya19021980@rambler.ru', 'Liberty Avenue', '92704', '7144372054', 3, 'Research dietitian', 2, 2, 28),
+(7, 'Осминина', 'Меланивна', 'Мелания', '1972-02-05', 'AnnCHatmaker@jourrapide.com', 'Walkers Ridge Way', '60654', '6302162822', 4, 'Administrative support specialist', 2, 2, 95),
+(8, 'Староволков', 'Ильич', 'Касьян', '2000-11-11', 'kasyan27081966@ya.ru', 'Saint Marys Avenue', '13611', '3158462160', 4, 'Maxillofacial surgeon', 1, 1, 60),
+(9, 'Можаев', 'Арсеньевич', 'Октавиан', '1999-02-11', 'oktavian28041982@rambler.ru', 'Aaron Smith Drive', '17055', '7176917106', 1, 'Leasing consultant', 2, 1, 21),
+(10, 'Якшин', 'Львович', 'Аполинарий', '1971-08-01', 'apolinariy.yakshin@hotmail.com', 'College View', '62928', '6186724997', 5, 'Radiologic technologist', 1, 1, 34),
+(11, 'Ананьева', 'Никитьевна', 'Эмма', '2001-11-03', 'emma4318@yandex.ru', 'Hampton Meadows', '01720', '9783771853', 6, 'High school counselor', 1, 2, 68),
+(12, 'Примакова', 'Даниловна', 'Аглая', '1977-03-02', 'aglaya1974@mail.ru', 'Alexander Drive', '76201', '9404420265', 7, 'Jewelry appraiser', 1, 1, 15),
+(13, 'Коптильников', 'Васильевич', 'Пантелеймон', '1988-04-21', 'panteleymon57@gmail.com', 'Valley Drive', '19106', '2673513108', 0, 'Registrar', 1, 1, 18),
+(14, 'Ефремовича', 'Александровна', 'Грация', '1996-02-11', 'graciya.efremovicha@outlook.com', 'Bryan Street', '27407', '3363140795', 0, 'ABE teacher', 2, 1, 24),
+(15, 'Мандрыка', 'Игнатьевна', 'Святослава', '1999-01-12', 'svyatoslava27071969@hotmail.com', 'Arrowood Drive', '32207', '9045470000', 0, 'Electronic publisher', 2, 1, 37);
+
+
+
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
+
+
+ALTER TABLE `cities`
+  ADD PRIMARY KEY (`id`);
+
+
+ALTER TABLE `company`
+  ADD PRIMARY KEY (`id`);
+
+
+ALTER TABLE `ganrs`
+  ADD PRIMARY KEY (`id`);
+
+
+ALTER TABLE `projects`
+  ADD PRIMARY KEY (`id`);
+
+
+ALTER TABLE `tags`
+  ADD PRIMARY KEY (`id`);
+
+
+ALTER TABLE `tasks`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+
+ALTER TABLE `category`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+
+ALTER TABLE `cities`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+
+ALTER TABLE `company`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+
+ALTER TABLE `ganrs`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+
+ALTER TABLE `projects`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+
+ALTER TABLE `tags`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+
+ALTER TABLE `tasks`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+
+ALTER TABLE `user`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+COMMIT;
