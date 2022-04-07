@@ -1,0 +1,22 @@
+ALTER TABLE user ADD age INT(10);
+
+UPDATE user SET age = 56 WHERE id in(1);
+UPDATE user SET age = 48 WHERE id in(2);
+UPDATE user SET age = 14 WHERE id in(3);
+UPDATE user SET age = 57 WHERE id in(4);
+UPDATE user SET age = 32 WHERE id in(5);
+UPDATE user SET age = 28 WHERE id in(6);
+UPDATE user SET age = 95 WHERE id in(7);
+UPDATE user SET age = 60 WHERE id in(8);
+UPDATE user SET age = 21 WHERE id in(9);
+UPDATE user SET age = 34 WHERE id in(10);
+UPDATE user SET age = 68 WHERE id in(11);
+UPDATE user SET age = 15 WHERE id in(12);
+UPDATE user SET age = 18 WHERE id in(13);
+UPDATE user SET age = 24 WHERE id in(14);
+UPDATE user SET age = 37 WHERE id in(15);
+
+
+SELECT AVG(age) AS sr_age, MAX(age) AS max_age, MIN(age) AS min_age FROM user;
+SELECT AVG(age) AS sr_age, MAX(age) AS max_age, MIN(age) AS min_age FROM user WHERE city = 1;
+SELECT AVG(age) AS sr_age, MAX(age) AS max_age, MIN(age) AS min_age FROM user WHERE city = 2;
